@@ -14945,7 +14945,7 @@ a.btn-icon-only {
 }
 @media (min-width: 768px) {
   .navbar-vertical.navbar-expand-md.fixed-left + .main-content {
-    margin-left: 250px;
+    margin-left: 150px;
   }
   .navbar-vertical.navbar-expand-md.fixed-right + .main-content {
     margin-right: 250px;
@@ -16234,7 +16234,7 @@ textarea[resize="horizontal"] {
     top: 0;
     bottom: 0;
     width: 100%;
-    max-width: 250px;
+    max-width: 134px;
     padding-left: 1.5rem;
     padding-right: 1.5rem;
     overflow-y: auto;
@@ -16284,14 +16284,14 @@ textarea[resize="horizontal"] {
   .navbar-vertical.navbar-expand-md .navbar-nav .nav-link {
     padding: 0.65rem 1.5rem;
   }
-  .navbar-vertical.navbar-expand-md .navbar-nav .nav-link.active:before {
+  /* .navbar-vertical.navbar-expand-md .navbar-nav .nav-link.active:before {
     top: 0.25rem;
     bottom: 0.25rem;
     left: 0;
     right: auto;
     border-left: 2px solid #5e72e4;
     border-bottom: 0;
-  }
+  } */
   .navbar-vertical.navbar-expand-md .navbar-nav .nav .nav-link {
     padding-left: 3.75rem;
   }
