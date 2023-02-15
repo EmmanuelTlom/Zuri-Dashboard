@@ -3,6 +3,7 @@
 body {
   font-family: "Plus Jakarta Sans", sans-serif;
   font-style: normal;
+  background: #fff;
 }
 .section_foot {
   margin-bottom: 3rem;
@@ -412,4 +413,107 @@ body {
   font-size: 16px;
   line-height: 22px;
   color: #18181b;
+}
+
+@media (max-width: 800px) {
+  .top_section_wrap {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .top_section {
+    padding-top: 3rem;
+  }
+}
+
+/* Settings page */
+
+.my_container {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 1440px;
+}
+
+.top_sections {
+  padding-top: 7rem;
+}
+
+.settings_top h2 {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 24px;
+  color: #18181b;
+}
+.settings_top p {
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 22px;
+  color: #71717a;
+}
+
+.topSetting {
+  margin-top: 3rem;
+}
+
+.topSetting .div {
+  background: #ffffff;
+  border: 1px solid #e4e4e7;
+  border-radius: 10px;
+  padding: 1rem;
+  max-width: 300px;
+}
+.topSetting .div p.registration {
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 18px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #71717a;
+}
+.topSetting .div p.platform_p {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+  color: #18181b;
+  margin-bottom: 0;
+}
+
+.topSetting .platform {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.react-switch-bg {
+  width: 32px !important;
+  height: 20px !important;
+  background: #d91820 !important;
+  border-radius: 120px !important;
+}
+.react-switch-bg > div {
+  display: none;
+}
+
+.react-switch-handle {
+  height: 16px !important;
+  width: 16px !important;
+}
+.platform input:checked .react-switch-handle {
+  transform: translateX(15px) !important;
+  background: #027a48;
+  height: 16px !important;
+  width: 16px !important;
+}
+/* .react-switch-handle:has(input:checked) {
+  transform: translateX(15px) !important;
+} */
+
+.settingToggle_wraps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  align-items: center;
+}
+.d-none {
+  display: block !important;
 }
