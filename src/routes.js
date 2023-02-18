@@ -24,7 +24,7 @@ var routes = [
   },
   {
     path: "/user",
-    name: "User",
+    name: "Users",
     icon: "ni ni-single-02 text-pink",
     component: User,
     layout: "/admin"

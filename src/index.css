@@ -40,7 +40,7 @@ body {
   background: #d91820;
   border-radius: 8px;
   width: 93px;
-  color: white;
+  color: white !important;
   margin: 0 auto;
   height: 81px;
 }
@@ -161,7 +161,7 @@ body {
 
 .top_section .right button.carlender {
   padding: 16px;
-  width: 130px;
+  width: 140px;
   height: 45px;
   background: #ffffff;
   border: 1px solid #71717a;
@@ -285,6 +285,7 @@ body {
   font-weight: 500;
   font-size: 12px;
   line-height: 21px;
+  white-space: nowrap;
   color: #d91820;
 }
 
@@ -583,6 +584,11 @@ body {
   }
 
   .top_section {
+    padding-top: 7rem;
+  }
+}
+@media (max-width: 768px) {
+  .top_section {
     padding-top: 3rem;
   }
 }
@@ -677,4 +683,32 @@ body {
 }
 .d-none {
   display: block !important;
+}
+
+@media (max-width: 768px) {
+  .main-content .navbar-top {
+    display: none;
+  }
+}
+@media (max-width: 400px) {
+  .top_section .right button.actions,
+  .top_section .right button.carlender {
+    width: 120px;
+    font-size: 10px;
+    padding: 10px;
+  }
+
+  .top_section {
+    padding-left: 30px !important;
+    padding-right: 30px !important;
+  }
+
+  .card-header small {
+    display: block;
+    line-height: 1.2;
+  }
+
+  .top_section .right {
+    flex-wrap: wrap;
+  }
 }
