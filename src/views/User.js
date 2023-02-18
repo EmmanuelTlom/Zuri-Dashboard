@@ -1,5 +1,4 @@
 
-import { useState } from "react";
 import UserTables from "components/UserTables";
 
 const User = (props) => {

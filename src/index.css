@@ -707,7 +707,8 @@ body {
     display: block;
     line-height: 1.2;
   }
-
+}
+@media (max-width: 325px) {
   .top_section .right {
     flex-wrap: wrap;
   }
