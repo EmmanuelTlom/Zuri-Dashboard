@@ -2,26 +2,27 @@
 // import UserTables from "components/UserTables";
 import { users } from "../assets/__mocks__/users";
 import React from "react";
-import { Link } from "react-router-dom";
-
+// import { Link } from "react-router-dom";
+import Topsettings from "components/settings/Topsettings";
+import TeamUsers from 'components/TeamUsers'
 import {
   Card,
   CardFooter,
-  Media,
   Pagination,
   PaginationItem,
   PaginationLink,
   Table,
+  Media,
   Row,
   
 } from "reactstrap";
 
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import Form from 'react-bootstrap/Form';
 
 
-function InviteUserModal(props) {
+
+function GenerateTeams(props) {
   return (
     <Modal
       {...props}
@@ -31,145 +32,65 @@ function InviteUserModal(props) {
       className="invite_modal"
     >
       <Modal.Header>
-          <Modal.Title>Invite User(s)</Modal.Title>
+          <Modal.Title>Team Settings</Modal.Title>
           <button onClick={props.onHide} className="modal_btn_close"><i class="fa-solid fa-xmark"></i></button>
       </Modal.Header>
       <Modal.Body>
-          <Form>
-            
-            <Form.Group
-              className="mb-3"
-              controlId="exampleForm.ControlTextarea1"
-            >
-              <Form.Label>Select User Role</Form.Label>
-              <Form.Select className="select">
-                <option>Select Role</option>
-                <option>select</option>
-                <option>select</option>
-              </Form.Select>
-            </Form.Group>
-            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-              <Form.Label>Email address</Form.Label>
-              <Form.Control
-                type="email"
-                placeholder="name@example.com"
-                autoFocus
-              />
-            </Form.Group>
-            
-            <Form.Group
-              className="mb-3"
-              controlId="exampleForm.ControlTextarea1"
-            >
-              <Form.Label>Valid For</Form.Label>
-              <Form.Select>
-                <option>3 Days</option>
-                <option>select</option>
-                <option>select</option>
-              </Form.Select>
-            </Form.Group>
-          </Form>
-        </Modal.Body>
-        <Modal.Footer>
+          <div className="settingToggle_wraps">
+            <Topsettings details={{ heading:'Voting', name: 'Members Voting', toggle: true }}/>
+            <Topsettings details={{ heading:'Self Join', name: 'SelfJoin', toggle: true }}/>
+          </div>
+      </Modal.Body>
+      <Modal.Footer>
           <Button variant="secondary" onClick={props.onHide}>
             Cancel
           </Button>
           <Button variant="primary" onClick={props.onHide}>
-            Save Invite
+            Save Settings
           </Button>
-        </Modal.Footer>
+      </Modal.Footer>
     </Modal>
   );
 }
-function UpdateUserModal(props) {
-  return (
-    <Modal
-      {...props}
-      size="lg"
-      aria-labelledby="contained-modal-title-vcenter"
-      centered
-      className="update_modal"
-    >
-      <Modal.Header className="update">
-          <Modal.Title className="update">Update User</Modal.Title>
-          <button onClick={props.onHide} className="modal_btn_close"><i class="fa-solid fa-xmark"></i></button>
-      </Modal.Header>
-      
-      <Modal.Body className="update_modal_body">
-          <p>Change permissions and reset user passwords</p>
-          <Form>
-            
-            <Form.Group
-              className="mb-3"
-              controlId="exampleForm.ControlTextarea1"
-            >
-              <Form.Label>Change Role</Form.Label>
-              <div className="wrap_input">
-                  <Form.Select className="select">
-                        <option>Mentor</option>
-                        <option>select</option>
-                        <option>select</option>
-                  </Form.Select>
-                  <button>Update</button>
-              </div>
-            </Form.Group>
-            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-              <Form.Label>Email address</Form.Label>
 
-              <div className="wrap_input">
-                <Form.Control
-                    type="password"
-                    placeholder="***********"
-                    autoFocus
-                />
-                 <button>Reset</button>
-              </div>
-            </Form.Group>
-          </Form>
-        </Modal.Body>
-        
-    </Modal>
-  );
-}
-const User = (props) => {
-  const [inviteModal, setInviteModal] = React.useState(false);
-  const [updateUserModal, setUpdateUserModal] = React.useState(false);
+const UserTeamsTeam = ({ direction, ...args }) => {
+  const [generateModal, generateTeamModal] = React.useState(false);
   return (
     <>
-      <div className="top_section">
+      <div className="top_section create">
         <div className="top_section_wrap">
           <div className="left">
             <div>
               <p>Users</p>
-              <small>Users/All</small>
+              <small>Users/Teams/Trojan</small>
             </div>
           </div>
 
-          <div className="right">
-              <button className="carlender">
-                Jan 7 - Feb 6 <i className="fa-solid fa-calendar-days"></i>
+          <div className="right userTeams">
+              <button className="carlender teamPage">
+                Edit <i class="fa-solid fa-pen-to-square"></i>
               </button>
-              <button className="filter">
-                <i className="fa-solid fa-filter"></i>
+              <button className="carlender teamPage">
+                Delete <i class="fa-solid fa-trash"></i>
               </button>
-              <button onClick={() => setInviteModal(true)} className="actions">
-                Invite User <i class="fa-solid fa-plus"></i>
+              <button className="carlender teamPage">
+                Settings <i class="fa-solid fa-gear"></i>
+              </button>
+              <button onClick={() => generateTeamModal(true)} className="actions">
+                Add Members <i class="fa-solid fa-plus"></i>
               </button>
           </div>
         </div>
-
-        <div className="input_area mt-4">
-            <div className="input_wrap">
-                <i class="fa-solid fa-magnifying-glass"></i>
-                <input type="text" placeholder="Search by title, track, category or course"/>
-            </div>
-        </div>
-
       </div>
+
+      <TeamUsers />
 
       {/* <UserTables/> */}
       <Row>
           <div className="col mt-4 px-5">
+              <h4 className="team_mem">
+                  Team  Members
+              </h4>
             <Card className="shadow user_table">
               <Table className="align-items-center table-flush" responsive>
                 <thead className="thead-light">
@@ -210,28 +131,18 @@ const User = (props) => {
                             <td>
                                 <i class="fa-solid fa-envelope"></i> <span>{user.email}</span>
                             </td>
-                            <td>{user.role}</td>
-                            <td className="text-right">
-                               <div className="table_btns">
-                                  <Link to="/admin/pageuser">
-                                    <button><i class="fa-solid fa-eye"></i></button>
-                                  </Link>
-                                  <button onClick={() => setUpdateUserModal(true)}><i class="fa-solid fa-pen-to-square"></i></button>
-                               </div>
-                            </td>
+                            <td className="role"><span>{user.role}</span></td>
+                            
                         </tr>
                     ))}
                   
                 </tbody>
               </Table>
-               <InviteUserModal
-                    show={inviteModal}
-                    onHide={() => setInviteModal(false)}
+               <GenerateTeams
+                    show={generateModal}
+                    onHide={() => generateTeamModal(false)}
                 />
-               <UpdateUserModal
-                    show={updateUserModal}
-                    onHide={() => setUpdateUserModal(false)}
-                />
+               
               <CardFooter className="py-4">
                 <nav aria-label="...">
                   <Pagination
@@ -292,4 +203,4 @@ const User = (props) => {
   );
 };
 
-export default User;
+export default UserTeamsTeam;

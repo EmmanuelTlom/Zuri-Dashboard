@@ -14,7 +14,8 @@ function Topsettings({details}) {
                         {details.name}
                     </p>
 
-                    <Switchcomponent/>
+
+                    <Switchcomponent />
                 </div>
             </div>
         </div>

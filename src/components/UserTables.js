@@ -178,7 +178,7 @@ const UserTables = () => {
                             <td>{user.role}</td>
                             <td className="text-right">
                                <div className="table_btns">
-                                   <button onClick={() => setInviteModal(true)}><i class="fa-solid fa-eye"></i></button>
+                                   <button><i class="fa-solid fa-eye"></i></button>
                                    <button onClick={() => setUpdateUserModal(true)}><i class="fa-solid fa-pen-to-square"></i></button>
                                </div>
                             </td>

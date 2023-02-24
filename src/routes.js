@@ -13,6 +13,14 @@ import Manage from "views/Manage";
 import Posts from "views/Posts";
 import Help from "views/Help";
 import News from "views/News";
+import Users from "views/Users";
+import EditUsers from "views/EditUsers";
+import UserTeams from "views/UserTeams";
+import UserTeamsTeam from "views/UserTeamsTeam";
+import UserInvitations from "views/UserInvitations";
+import UsersSideBar from "views/UsersSideBar";
+import UserStudents from "views/UserStudents";
+import StudentUser from "views/StudentUser";
 
 var routes = [
   {
@@ -20,49 +28,120 @@ var routes = [
     name: "Dashboard",
     icon: "ni ni-tv-2 text-primary",
     component: Index,
-    layout: "/admin"
+    layout: "/admin",
+    showSide:true
   },
   {
     path: "/user",
     name: "Users",
     icon: "ni ni-single-02 text-pink",
     component: User,
-    layout: "/admin"
+    layout: "/admin",
+     showSide:false
+  },
+  {
+    path: "/UsersSideBar",
+    name: "Users",
+    icon: "ni ni-single-02 text-pink",
+    component: UsersSideBar,
+    layout: "/admin",
+    showSide:true
+  },
+  {
+    path: "/studentUser",
+    name: "StudentUser",
+    icon: "ni ni-single-02 text-pink",
+    component: StudentUser,
+    layout: "/admin",
+    showSide:false
+  },
+  {
+    path: "/pageuser",
+    name: "pageuser",
+    icon: "ni ni-single-02 text-pink",
+    component: Users,
+    layout: "/admin",
+    showSide:false
+  },
+  {
+    path: "/userStudents",
+    name: "UserStudents",
+    icon: "ni ni-single-02 text-pink",
+    component: UserStudents,
+    layout: "/admin",
+    showSide:false
+  },
+  {
+    path: "/editUsers",
+    name: "EditUsers",
+    icon: "ni ni-single-02 text-pink",
+    component: EditUsers,
+    layout: "/admin",
+    showSide:false
+  },
+  {
+    path: "/userTeams",
+    name: "UserTeams",
+    icon: "ni ni-single-02 text-pink",
+    component: UserTeams,
+    layout: "/admin",
+    showSide:false
+  },
+  {
+    path: "/userInvitations",
+    name: "UserInvitations",
+    icon: "ni ni-single-02 text-pink",
+    component: UserInvitations,
+    layout: "/admin",
+    showSide:false
+  },
+  {
+    path: "/users-team/Team",
+    name: "UserTeamsTeam",
+    icon: "ni ni-single-02 text-pink",
+    component: UserTeamsTeam,
+    layout: "/admin",
+    showSide:false
   },
   {
     path: "/school",
     name: "School",
     icon: "fa-solid fa-user-group text-pink",
     component: School,
-    layout: "/admin"
+    layout: "/admin",
+    showSide:true
   },
   {
     path: "/manage",
     name: "Manage",
     icon: "ni ni-single-copy-04 text-pink",
     component: Manage,
-    layout: "/admin"
+    layout: "/admin",
+    showSide:true
   },
   {
     path: "/posts",
     name: "Posts",
     icon: "fa-solid fa-folder text-pink",
     component: Posts,
-    layout: "/admin"
+    layout: "/admin",
+    showSide:true
   },
   {
     path: "/help",
     name: "Help",
     icon: "fa-solid fa-bell text-pink",
     component: Help,
-    layout: "/admin"
+    layout: "/admin",
+    showSide:true
   },
   {
     path: "/news",
     name: "News",
     icon: "fa-solid fa-signal text-pink",
     component: News,
-    layout: "/admin"
+    layout: "/admin",
+    showSide:true
   },
 
   {
@@ -70,7 +149,8 @@ var routes = [
     name: "Settings",
     icon: "ni ni-settings-gear-65 text-pink",
     component: Settings,
-    layout: "/admin"
+    layout: "/admin",
+    showSide:true
   },
   // {
   //   path: "/icons",
